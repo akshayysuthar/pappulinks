@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1160650118224185"
+        crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/home.css"> -->
+    <style>
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <input type="text" id="url-input" hidden>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pappu Blogs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="download-btn">
+        <button id="countdown-btn" class="btn btn-success px-5" onclick="startCountdown()">Verify</button>
+        <p id="countdown"></p>
+    </div>
+
+    <!-- Recent Blog Posts -->
+    <div class="container my-5">
+        <h2 class="mb-4">Recent Blog Posts</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Understanding UP</h5>
+                        <p class="card-text">Unified Payments Interface (UPI) is a real-time payment system developed by
+                            the National Payments
+                            Corporation of India (NPCI). It facilitates instant fund transfer between two bank accounts
+                            on a
+                            mobile platform without the need for bank details or IFSC codes.</p>
+                        <a href="blog.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Future of AI in Healthcare</h5>
+                        <p class="card-text"> With the rise of artificial intelligence (AI) technology, the healthcare
+                            industry is poised for significant changes. From diagnosis and treatment to patient care and
+                            administration, AI has the potential to revolutionize the way healthcare is delivered.</p>
+                        <a href="blog.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Impact of 5G Technology on Business</h5>
+                        <p class="card-text">As 5G technology continues to roll out, businesses are beginning to take
+                            notice. With its faster speeds, lower latency, and increased connectivity, 5G has the
+                            potential to transform the way companies operate. From logistics and supply chain management
+                            to remote work and customer engagement, the possibilities are endless</p>
+                        <a href="blog.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Rise of Quantum Computing</h5>
+                        <p class="card-text">Quantum computing is still in its early stages, but it has the potential to
+                            revolutionize the way we solve complex problems. With its ability to perform calculations
+                            exponentially faster than classical computers, quantum computing has applications in fields
+                            ranging from cryptography and drug discovery to climate modeling and financial analysis.</p>
+                        <a href="blog.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Ethics of Big Data</h5>
+                        <p class="card-text"> As the amount of data being generated continues to grow, so do the ethical
+                            concerns surrounding its use. From data privacy and security to algorithmic bias and
+                            discrimination, the ethical implications of big data are far-reaching. As companies and
+                            governments continue to collect and analyze vast amounts of data, it's important to consider
+                            the ethical implications of these actions.</p>
+                        <a href="blog.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Pros and Cons of Remote Work</h5>
+                        <p class="card-text">With the rise of remote work due to the COVID-19 pandemic, many companies
+                            are considering making it a permanent option for their employees. While remote work has many
+                            benefitssuch as increased flexibility and reduced commuting costs, there are also potential
+                            downsides such as social isolation and difficulty separating work from home life. As remote
+                            work becomes more common, it's important to weigh the pros and cons and consider how to make
+                            it a sustainable and productive option for both employees and employers.</p>
+                        <a href="blog.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="download-btn">
+        <button id="continue-btn" class="btn btn-success px-5" onclick="continueBtn()"
+            style="display: none;">Continue</button>
+        <p id="countdown1"></p>
+        <div id="redierct"></div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">About Pappu Blogs</h5>
+                    <p>Pappu Blogs is best blogger in the world.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="index.html" class="text-dark">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Social Media</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#" class="text-dark"><i class="bi bi-facebook"></i> Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark"><i class="bi bi-twitter"></i> Twitter</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark"><i class="bi bi-instagram"></i> Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Pappu Blogs. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="firebase.js"></script>
+
+    <script> // time btn
+        function startCountdown() {
+            var countdownEl = document.getElementById("countdown");
+            var countdownBtn = document.getElementById("countdown-btn");
+            var continueBtn = document.getElementById("continue-btn");
+            var timeLeft = 1;
+            countdownBtn.style.display = "none";
+            continueBtn.style.display = "none";
+            var countdownInterval = setInterval(function () {
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownEl.innerHTML = "Scroll down and click on continue button";
+                    continueBtn.style.display = "block";
+                } else {
+                    countdownEl.innerHTML = "PLease wait " + timeLeft + " seconds";
+                }
+                timeLeft -= 1;
+            }, 1000);
+        }
+        function continueBtn() {
+            var countdownEl = document.getElementById("countdown1");
+            var countdownBtn = document.getElementById("countdown-btn");
+            var continueBtn = document.getElementById("continue-btn");
+            var linkDiv = document.getElementById("redierct");
+            var timeLeft = 1;
+            countdownBtn.style.display = "none";
+            continueBtn.style.display = "none";
+            var countdownInterval = setInterval(function () {
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    linkDiv.innerHTML += `<button onclick="openpostPage()" class="btn btn-success px-5"  >Go to Download Link</button>`;
+                    continueBtn.style.display = "none";
+                    countdownEl.style.display = "none";
+                } else {
+                    countdownEl.innerHTML = "PLease Wait " + timeLeft + " seconds";
+                }
+                timeLeft -= 1;
+            }, 1000);
+        }
+
+
+
+    </script>
+    <script> // url setup
+        function displayUrl() {
+            var url = window.location.href;
+            document.getElementById("url-input").value = url;
+        } displayUrl()
+        function getUrl() {
+            const url = document.getElementById("url-input").value;
+            const parts = url.split("&");
+            const Id = parts[0].split("?").pop();
+            const Q = parts[1];
+        } getUrl()
+
+        function openpostPage() {
+            const url = document.getElementById("url-input").value;
+            const parts = url.split("&");
+            const Id = parts[0].split("?").pop();
+            const Q = parts[1];
+            window.location.href = `blog.html?Q=${Id}&${Q}`;
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
