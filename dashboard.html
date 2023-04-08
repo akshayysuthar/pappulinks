@@ -60,14 +60,54 @@
             color: black;
             margin-right: 15px;
         }
+
+
+        .input {
+            margin: 10px;
+        }
+
+        .save-btn {
+            width: auto;
+            align-items: center;
+            background-color: green;
+            color: white;
+            border: none;
+            margin: 10px;
+            padding: 10px;
+        }
     </style>
 </head>
 
 <body>
     <div class="links">
         <a href="./dashboard.html">Home</a>
-        <a href="./add-movie.html">Add Movie Links </a>
+        <a href="./index.html">Blogging Site </a>
     </div>
+    <center>
+        <form id="form">
+
+            <div>
+                <label for="id">id:</label>
+                <input class="input" type="text" id="postId" name="id">
+            </div>
+            <div> <label for="title">Title:</label>
+                <input class="input" type="text" id="title" name="title">
+            </div>
+            <div>
+                <label for="link1080p">1080p Link:</label>
+                <input class="input" type="text" id="link1080p" name="link1080p">
+            </div>
+            <div>
+                <label for="link720p">720p Link:</label>
+                <input class="input" type="text" id="link720p" name="link720p">
+            </div>
+            <div>
+                <label for="link480p">480p Link:</label>
+                <input class="input" type="text" id="link480p" name="link480p">
+            </div>
+            <button type="submit" class="save-btn">Upload This Movie</button>
+        </form>
+    </center>
     <div id="link-section"></div>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
@@ -100,6 +140,7 @@
 
             })
     </script>
+    <script src="add-movie.js"></script>
 </body>
 
 </html>
