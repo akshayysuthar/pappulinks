@@ -161,13 +161,7 @@ function shortenUrl() {
 
 
   })
-  .then(function() {
-    // Display the shortened URL
-    shortenedUrlOutput.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>";
-  })
-  .catch(function(error) {
-    console.error("Error saving URL to Firestore: ", error);
-  });
+
 }
 
 // Get all links from Firestore and display them on the page
@@ -188,6 +182,39 @@ db.collection("telegram-post").onSnapshot(function(querySnapshot) {
     linksList.appendChild(linkElement);
   });
 });
+
+const form = document.querySelector("form");
+form
+  .addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Get the form data
+    const title = document.getElementById("title").value;
+    const link1080p = document.getElementById("link1080p").value;
+    const link720p = document.getElementById("link720p").value;
+    const link480p = document.getElementById("link480p").value;
+    const postId = document.getElementById("postId").value;
+
+    db.collection("telegram-post").doc(postId).set({
+      title,
+      link1080p,
+      link720p,
+      link480p,
+      code: code,
+      code1: code1,
+      timestamp: Date(),
+    });
+   .then(function() {
+    // Display the shortened URL
+    alert("Movie Links are uploaded")
+    shortenedUrlOutput.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>";
+  })
+  .catch(function(error) {
+    console.error("Error saving URL to Firestore: ", error);
+  });
+  })
+
+
     </script>
     <script src="add-movie.js"></script>
 </body>
