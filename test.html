@@ -21,6 +21,8 @@
     <script src="firebase.js"></script>
 <script>
 
+
+
 // Create a function to shorten the URL and save it to Firestore
 function shortenUrl() {
   var urlInput = document.getElementById("url");
@@ -60,8 +62,18 @@ db.collection("telegram-post").onSnapshot(function(querySnapshot) {
     var linkElement = document.createElement("p");
     linkElement.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a> - " + link;
     linksList.appendChild(linkElement);
+    
+    // Add an event listener to each shortened link
+    linkElement.querySelector("a").addEventListener("click", function(event) {
+      // Prevent the default behavior of opening the link in a new tab
+      event.preventDefault();
+      
+      // Redirect the user to the original URL
+      window.location.href = link;
+    });
   });
 });
+
 
 </script>
   </body>
