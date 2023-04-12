@@ -15,6 +15,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
     <script src="firebase.js"></script>
     <script>
+
+// Create a function to shorten the URL and save it to Firestore
 function shortenUrl() {
   var urlInput = document.getElementById("url");
   var shortenedUrlOutput = document.getElementById("shortenedUrl");
@@ -30,12 +32,32 @@ function shortenUrl() {
   })
   .then(function() {
     // Display the shortened URL
-    shortenedUrlOutput.innerText = window.location.href + code;
+    shortenedUrlOutput.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>";
   })
   .catch(function(error) {
     console.error("Error saving URL to Firestore: ", error);
   });
 }
+
+// Get all links from Firestore and display them on the page
+db.collection("telegram-post").onSnapshot(function(querySnapshot) {
+  var linksList = document.getElementById("linksList");
+  
+  // Clear the current list of links
+  linksList.innerHTML = "";
+  
+  // Loop through each link in the Firestore collection
+  querySnapshot.forEach(function(doc) {
+    var link = doc.data().url;
+    var code = doc.id;
+    
+    // Display the link on the page with the akshayy.tk domain
+    var linkElement = document.createElement("p");
+    linkElement.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a> - " + link;
+    linksList.appendChild(linkElement);
+  });
+});
+
 </script>
 
   </body>
