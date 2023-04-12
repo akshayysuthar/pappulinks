@@ -145,47 +145,8 @@
                 });
 
             })
-function shortenUrl() {
-  var url1080p = document.getElementById("link1080p");
-  var url720p = document.getElementById("link720p");
-
-  var shortenedUrlOutput = document.getElementById("shortenedUrl");
-  
-  var url1080p = url1080p.value;
-  var url720p = url720p.value;
-  
-  // Generate a random 6-character code
-  
-  // Save the URL and code to Firestore
-  db.collection("telegram-post").set({
-    url1080p: url1080p,
-    url720p: url720p,
-    code: code,
-    code1: code1,
 
 
-  })
-
-}
-
-// Get all links from Firestore and display them on the page
-db.collection("telegram-post").onSnapshot(function(querySnapshot) {
-  var linksList = document.getElementById("linksList");
-  
-  // Clear the current list of links
-  linksList.innerHTML = "";
-  
-  // Loop through each link in the Firestore collection
-  querySnapshot.forEach(function(doc) {
-    var link = doc.data().url;
-    var code = doc.id;
-    
-    // Display the link on the page with the akshayy.tk domain
-    var linkElement = document.createElement("p");
-    linkElement.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a> - " + link;
-    linksList.appendChild(linkElement);
-  });
-});
 
 const form = document.querySelector("form");
 form
@@ -223,7 +184,6 @@ form
 
 
     </script>
-   // <script src="add-movie.js"></script>
 </body>
 
 </html>
