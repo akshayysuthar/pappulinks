@@ -172,14 +172,7 @@ form
       code1: code1,
       timestamp: Date(),
     });
-   .then(function() {
-    // Display the shortened URL
     alert("Movie Links are uploaded")
-    shortenedUrlOutput.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>";
-  })
-  .catch(function(error) {
-    console.error("Error saving URL to Firestore: ", error);
-  });
   })
 
 
