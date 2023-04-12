@@ -122,8 +122,6 @@
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     let data = doc.data();
-                    var code = ;
-                    var code1 = doc.data().code1;
                     blogSection.innerHTML += `
     <div class="card" style="width: 10rem;">
         <div class="card-body">
