@@ -21,28 +21,29 @@
     <script src="firebase.js"></script>
 <script>
 
-
-
 // Create a function to shorten the URL and save it to Firestore
 function shortenUrl() {
-  var urlInput = document.getElementById("url");
+  var link1080pInput = document.getElementById("link1080p");
+  var link720pInput = document.getElementById("link720p");
   var shortenedUrlOutput = document.getElementById("shortenedUrl");
   
-  var url = urlInput.value;
+  var link1080p = link1080pInput.value;
+  var link720p = link720pInput.value;
   
   // Generate a random 6-character code
   var code = Math.random().toString(36).substring(2, 8);
   
-  // Save the URL and code to Firestore
-  db.collection("telegram-post").doc(code).set({
-    url: url
+  // Save the links and code to Firestore
+  db.collection("links").doc(code).set({
+    link1080p: link1080p,
+    link720p: link720p
   })
   .then(function() {
     // Display the shortened URL
     shortenedUrlOutput.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>";
   })
   .catch(function(error) {
-    console.error("Error saving URL to Firestore: ", error);
+    console.error("Error saving links to Firestore: ", error);
   });
 }
 
@@ -55,12 +56,13 @@ db.collection("telegram-post").onSnapshot(function(querySnapshot) {
   
   // Loop through each link in the Firestore collection
   querySnapshot.forEach(function(doc) {
-    var link = doc.data().url;
+    var link1080p = doc.data().link1080p;
+    var link720p = doc.data().link720p;
     var code = doc.id;
     
     // Display the link on the page with the akshayy.tk domain
     var linkElement = document.createElement("p");
-    linkElement.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a> - " + link;
+    linkElement.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a> - " + link1080p + " - " + link720p;
     linksList.appendChild(linkElement);
     
     // Add an event listener to each shortened link
@@ -69,11 +71,10 @@ db.collection("telegram-post").onSnapshot(function(querySnapshot) {
       event.preventDefault();
       
       // Redirect the user to the original URL
-      window.location.href = link;
+      window.location.href = link1080p;
     });
   });
 });
-
 
 </script>
   </body>
