@@ -116,6 +116,10 @@
     <script> // all post shown here 
         const blogSection = document.getElementById("link-section")
         const blogRef = db.collection("telegram-post");
+        var code = doc.data().code;
+        var code1 = doc.data().code1;
+
+
         blogRef
             // .orderBy("tempstamp", "desc")
             .get()
@@ -129,8 +133,10 @@
             <h6 class="card-title">${doc.data().timestamp}</h6>
             <h5 class="card-title">${doc.data().title}</h5>
             <p class="card-text">
-                <a class="link" id="my-link1" href="index.html?${doc.id}&1080p" target="_blank" rel="noopener noreferrer">1080p</a> 
+                <a class="link" id="my-link1" href="index.html?${doc.id}&1080p" target="_blank" rel="noopener noreferrer">1080p</a>
+                <a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>
                 <a class="link" id="my-link2" href="index.html?${doc.id}&720p" target="_blank" rel="noopener noreferrer">720p</a>
+                <a href='https://akshayy.tk/" + code1 + "' target='_blank'>akshayy.tk/" + code1 + "</a>
             </p>
 
         </div>
@@ -149,8 +155,6 @@ function shortenUrl() {
   var url720p = url720p.value;
   
   // Generate a random 6-character code
-  var code = Math.random().toString(36).substring(2, 8);
-  var code1 = Math.random().toString(36).substring(2, 8);
   
   // Save the URL and code to Firestore
   db.collection("telegram-post").set({
@@ -195,6 +199,9 @@ form
     const link480p = document.getElementById("link480p").value;
     const postId = document.getElementById("postId").value;
 
+    var code = Math.random().toString(36).substring(2, 8);
+    var code1 = Math.random().toString(36).substring(2, 8);
+  
     db.collection("telegram-post").doc(postId).set({
       title,
       link1080p,
@@ -216,7 +223,7 @@ form
 
 
     </script>
-    <script src="add-movie.js"></script>
+   // <script src="add-movie.js"></script>
 </body>
 
 </html>
