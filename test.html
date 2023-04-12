@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Link Shortener</title>
+  </head>
+  <body>
+    <h1>Link Shortener</h1>
+    <form>
+      <label for="url">URL:</label>
+      <input type="text" id="url" name="url" />
+      <button type="submit" onclick="shortenUrl()">Shorten</button>
+    </form>
+    <p id="shortenedUrl"></p>
+    <div id="linksList"></div>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+    <script src="firebase.js"></script>
+<script>
+
+// Create a function to shorten the URL and save it to Firestore
+function shortenUrl() {
+  var urlInput = document.getElementById("url");
+  var shortenedUrlOutput = document.getElementById("shortenedUrl");
+  
+  var url = urlInput.value;
+  
+  // Generate a random 6-character code
+  var code = Math.random().toString(36).substring(2, 8);
+  
+  // Save the URL and code to Firestore
+  db.collection("telegram-post").doc(code).set({
+    url: url
+  })
+  .then(function() {
+    // Display the shortened URL
+    shortenedUrlOutput.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>";
+  })
+  .catch(function(error) {
+    console.error("Error saving URL to Firestore: ", error);
+  });
+}
+
+// Get all links from Firestore and display them on the page
+db.collection("telegram-post").onSnapshot(function(querySnapshot) {
+  var linksList = document.getElementById("linksList");
+  
+  // Clear the current list of links
+  linksList.innerHTML = "";
+  
+  // Loop through each link in the Firestore collection
+  querySnapshot.forEach(function(doc) {
+    var link = doc.data().url;
+    var code = doc.id;
+    
+    // Display the link on the page with the akshayy.tk domain
+    var linkElement = document.createElement("p");
+    linkElement.innerHTML = "<a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a> - " + link;
+    linksList.appendChild(linkElement);
+  });
+});
+
+</script>
+  </body>
+</html>
