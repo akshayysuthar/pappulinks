@@ -116,6 +116,8 @@
     <script> // all post shown here 
         const blogSection = document.getElementById("link-section")
         const blogRef = db.collection("telegram-post");
+        var code = doc.data().code;
+        var code1 = doc.data().code1;
         blogRef
             // .orderBy("tempstamp", "desc")
             .get()
@@ -130,7 +132,9 @@
             <h5 class="card-title">${doc.data().title}</h5>
             <p class="card-text">
                 <a class="link" id="my-link1" href="index.html?${doc.id}&1080p" target="_blank" rel="noopener noreferrer">1080p</a> 
+                <a href='https://akshayy.tk/" + code + "' target='_blank'>akshayy.tk/" + code + "</a>
                 <a class="link" id="my-link2" href="index.html?${doc.id}&720p" target="_blank" rel="noopener noreferrer">720p</a>
+                <a href='https://akshayy.tk/" + code1 + "' target='_blank'>akshayy.tk/" + code1 + "</a>
             </p>
 
         </div>
