@@ -116,14 +116,14 @@
     <script> // all post shown here 
         const blogSection = document.getElementById("link-section")
         const blogRef = db.collection("telegram-post");
-        var code = doc.data().code;
-        var code1 = doc.data().code1;
         blogRef
             // .orderBy("tempstamp", "desc")
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     let data = doc.data();
+                    var code = doc.data().code;
+                    var code1 = doc.data().code1;
                     blogSection.innerHTML += `
     <div class="card" style="width: 10rem;">
         <div class="card-body">
