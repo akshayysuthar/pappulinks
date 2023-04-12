@@ -12,11 +12,15 @@ form
     const link480p = document.getElementById("link480p").value;
     const postId = document.getElementById("postId").value;
 
+    var code = Math.random().toString(36).substring(2, 8);
+    var code1 = Math.random().toString(36).substring(2, 8);
     db.collection("telegram-post").doc(postId).set({
       title,
       link1080p,
       link720p,
       link480p,
+      code,
+      code1,
       timestamp: Date(),
     });
     alert("Movie Links are uploaded")
